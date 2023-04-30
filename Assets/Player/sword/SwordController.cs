@@ -29,10 +29,10 @@ public class SwordController : MonoBehaviour
     }
 
     // Used by animation event to end the slash
-    public void OnSlashAnimationEnd()
+   /* public void OnSlashAnimationEnd()
     { 
 
         canSlash = true;
         Debug.Log("Animation Reset!");
-    }
+    }*/
 }
