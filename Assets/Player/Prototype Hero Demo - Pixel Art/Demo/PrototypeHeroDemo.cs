@@ -61,14 +61,14 @@ public class PrototypeHeroDemo : MonoBehaviour {
         // GetAxisRaw returns either -1, 0 or 1
         float inputRaw = Input.GetAxisRaw("Horizontal");
         // Check if current move input is larger than 0 and the move direction is equal to the characters facing direction
-        if (Mathf.Abs(inputRaw) > Mathf.Epsilon && Mathf.Sign(inputRaw) == m_facingDirection)
+       /* if (Mathf.Abs(inputRaw) > Mathf.Epsilon && Mathf.Sign(inputRaw) == m_facingDirection)
             m_moving = true;
 
         else
             m_moving = false;
-
+        */
         // Swap direction of sprite depending on move direction
-        if (inputRaw > 0)
+        /*if (inputRaw > 0)
         {
             GetComponent<SpriteRenderer>().flipX = false;
             m_facingDirection = 1;
@@ -78,7 +78,7 @@ public class PrototypeHeroDemo : MonoBehaviour {
         {
             GetComponent<SpriteRenderer>().flipX = true;
             m_facingDirection = -1;
-        }
+        }*/
      
         // SlowDownSpeed helps decelerate the characters when stopping
         float SlowDownSpeed = m_moving ? 1.0f : 0.5f;
@@ -104,12 +104,12 @@ public class PrototypeHeroDemo : MonoBehaviour {
         }
 
         //Run
-        else if(m_moving)
+        //if(m_moving)
             m_animator.SetInteger("AnimState", 1);
 
         //Idle
-        else
-            m_animator.SetInteger("AnimState", 0);
+        
+            //m_animator.SetInteger("AnimState", 0);
     }
 
     // Function used to spawn a dust effect
