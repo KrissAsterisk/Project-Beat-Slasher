@@ -5,15 +5,12 @@ using UnityEngine;
 public class SlimeSpawner : MonoBehaviour
 {
     public GameObject slimePrefab;
-    public float beatDuration = 1f;
+    public BeatDetection beatDetection;
     public float spawnDelay = 0.2f;
-    public int[] spawnBeats;
-
-    private float spawnTime;
+    public float beatThreshold = 4f;
 
     private void Start()
     {
-        spawnTime = beatDuration - spawnDelay;
         StartCoroutine(SpawnSlimes());
     }
 
@@ -21,9 +18,9 @@ public class SlimeSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(spawnDelay);
 
-        foreach (int beat in spawnBeats)
+        while (true)
         {
-            yield return new WaitForSeconds(spawnTime);
+            yield return new WaitUntil(() => beatDetection.IsBeatDetected());
 
             Instantiate(slimePrefab, transform.position, Quaternion.identity);
 
@@ -31,3 +28,4 @@ public class SlimeSpawner : MonoBehaviour
         }
     }
 }
+
