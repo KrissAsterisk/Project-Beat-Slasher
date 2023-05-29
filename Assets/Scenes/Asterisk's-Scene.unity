@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 5
-  moveSpeed: 3
+  moveSpeed: 1.5
   moveDuration: 1
 --- !u!50 &746092259
 Rigidbody2D:
@@ -555,9 +555,9 @@ Rigidbody2D:
   m_GameObject: {fileID: 746092254}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 1
+  m_Mass: 0.012695831
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -565,7 +565,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &746092260
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -704,7 +704,7 @@ MonoBehaviour:
   beatDetection: {fileID: 1832180354}
   maxLives: 5
   lifeText: {fileID: 828508646}
---- !u!50 &788393771
+--- !u!50 &788393773
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -714,7 +714,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 788393759}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
